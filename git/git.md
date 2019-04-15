@@ -255,6 +255,21 @@ git底层就是采用的SHA-1算法。用来保证数据的完整性。
 
    
 
+   * 问题推送失败
+
+     `! [rejected]        master -> master (non-fast-forward)                                                                                                                                        
+     error: failed to push some refs to 'git@github.com:hailong93/bigdata.git'                                                                                                                       
+     hint: Updates were rejected because the tip of your current branch is behind                                                                                                                    
+     hint: its remote counterpart. Integrate the remote changes (e.g.                                                                                                                                
+     hint: 'git pull ...') before pushing again.                                                                                                                                                     
+     hint: See the 'Note about fast-forwards' in 'git push --help' for details.     
+
+   * 解决
+
+     ~~~shell
+     git pull --rebase origin master
+     ~~~
+
 3. 克隆
 
    * 命令
