@@ -1,3 +1,5 @@
+[TOC]
+
 # Git
 
 是分布式的版本管理工具。避免了单点故障。
@@ -293,3 +295,42 @@ git底层就是采用的SHA-1算法。用来保证数据的完整性。
 5. 冲突问题
    * 如果不是基于Github远程库的最新版所做的修改，不能推送，必须先拉取。
    * 拉取下来后如果进入冲突状态，则按照“分支冲突解决”操作解决即可。
+
+## git集成开发工具
+
+## eclipse
+
+1. 工程初始化本地库
+
+   工程----右键----Team----Share Project----Git
+
+   create repository
+
+   finish
+
+2. 忽略一些特定文件
+
+   * Eclipse的特定文件，在一个团队中很难保证都使用相同的IDE工具，工具不同相关工程特定文件就有可能不同。如果这些文件加入版本控制，就为版本控制添加了不必要的麻烦，比如冲突问题。
+
+   * 配置忽略文件
+
+     官方地址：https://github.com/gitignore
+
+     在.gitconfig中引入忽略的配置文件
+
+     ~~~properties
+     [core]
+     	excludesfile=c:\Users\kanghailong\java.gitignore
+     ~~~
+
+     注意：只能使用正斜线
+
+3. 添加暂存区
+
+   team ----- add to index
+
+   team ----- comit
+
+4. 推送到远程库
+
+   team ---- remote ---- push
